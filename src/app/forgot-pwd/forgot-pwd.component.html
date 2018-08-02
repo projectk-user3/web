@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+
+        <div class="Absolute-Center rounded">
+            <div class="col-sm-12">
+                <p class="h5 text-center">Account recovery</p>
+                <form>
+                    <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class="label label-important fadeOut animated error-msg">
+                        <div [hidden]="!emailref.errors?.pattern">
+                            Invalid email address
+                        </div>
+                    </div>
+                    <div class="margin-top30">
+                        <input [ngClass]="{'is-invalid': emailref.errors &&(emailref.touched || emailref.dirty)}" class="form-control" type="text" name='email' placeholder="Please enter registered email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" [(ngModel)]="email"
+                            #emailref="ngModel" />
+                    </div>
+
+                    <div class="margin-top30">
+                        <button class="btn btn-md btn-primary pull-right" (click)="onReset()">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
