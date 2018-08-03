@@ -1,38 +1,65 @@
 <div class="container">
-    <div class="row">
+  <div class="row">
 
-        <div class="Absolute-Center rounded">
-            <p class="label label-important fadeOut animated error-msg" *ngIf="isError"> Please Enter Valid Credentials.</p>
-            <p class="label label-important fadeOut animated error-msg" *ngIf="isServerSideError">
-                There is a problem with the service. Please try agian later.</p>
-            <div class="col-sm-12">
-                <form class="form-signin" [formGroup]="signInForm">
-                    <div class="input-group mb-3 margin-top30">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i class="fa fa-user"></i>
-                            </div>
-                        </div>
-                        <input class="form-control" type="text" name='username' formControlName="username" placeholder="username" />
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <i class="fa fa-lock"></i>
-                            </div>
-                        </div>
-                        <input class="form-control" type="password" name='password' formControlName="password" placeholder="password" />
-                    </div>
-
-                    <div class="input-group">
-                        <button class="btn btn-lg btn-primary btn-block" (click)="onSignIn()">Sign in</button>
-                    </div>
-                    <div class="form-group text-left margin-top10">
-                        <a routerLink="/forgotpwd">Forgot password?</a>
-                    </div>
-                </form>
-            </div>
+    <div class="intialForm">
+      <div class="row top-section">
+        <div class="col-sm-12 text-center">
+          <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 69px;"></i>
+          <p class="h2">Sign in</p>
         </div>
+        <div class="alert alert-danger" role="alert" *ngIf="isError">
+          Please Enter Valid Credentials.
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="isServerSideError">
+          There is a problem with the service. Please try agian later.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <div class="col-sm-12">
+            <form class="form-signin" [formGroup]="signInForm">
+
+              <div class="form-group">
+                <label for="username">User name</label>
+                <input class="form-control" type="text" name='username' formControlName="username" placeholder="username" />
+              </div>
+              <div class="form-group">
+                <label for="username">Password
+                </label>
+                <a routerLink="/forgotpwd" class="pull-right">Forgot password?</a>
+                <input class="form-control" type="password" name='password' formControlName="password" placeholder="password" />
+              </div>
+
+
+              <!-- <div class="input-group mb-3 margin-top30">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                        <i class="fa fa-user"></i>
+                                      </div>
+                                    </div>
+                                    <input class="form-control" type="text" name='username' formControlName="username" placeholder="username" />
+                                  </div>
+                        
+                                  <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text">
+                                        <i class="fa fa-lock"></i>
+                                      </div>
+                                    </div>
+                                    <input class="form-control" type="password" name='password' formControlName="password" placeholder="password" />
+                                  </div> -->
+
+              <div class="input-group">
+                <button class="btn btn-md btn-success btn-block" (click)="onSignIn()">Sign in</button>
+              </div>
+              <!-- <div class="form-group text-left margin-top10">
+                                    <a routerLink="/forgotpwd">Forgot password?</a>
+                                  </div> -->
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
