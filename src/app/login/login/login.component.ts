@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RestService } from '../services/rest.service';
-import { AppConstants } from '../services/constants.config';
+import { RestService } from '../../services/rest.service';
+import { AppConstants } from '../../services/constants.config';
 
 @Component({
   selector: 'app-login',
