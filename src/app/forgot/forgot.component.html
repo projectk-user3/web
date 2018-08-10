@@ -5,7 +5,7 @@
             <div class="row top-section">
                 <div class="col-sm-12 text-center">
                     <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 69px;"></i>
-                    <p class="h2 weight-light">Reset your password</p>
+                    <p class="h2 weight-light"> {{ resetPwd }} </p>
                 </div>
                 <div class="alert alert-danger" role="alert" *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)">
                     Invalid email address.
