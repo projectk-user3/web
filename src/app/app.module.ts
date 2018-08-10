@@ -7,13 +7,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { ForgotPwdComponent } from './forgot-pwd/forgot-pwd.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ForgotPwdComponent
+    ForgotComponent
   ],
   imports: [
     BrowserModule,

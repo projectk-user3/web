@@ -16,11 +16,13 @@
 
             <div class="card">
                 <div class="card-body">
-                    <p class="weight-normal">Enter your email address and we will send you a link to reset your password.</p>
+                    <p class="weight-normal"> {{ sentMsg }}</p>
                     <input [ngClass]="{'is-invalid': emailref.errors &&(emailref.touched || emailref.dirty)}" class="form-control" type="text" name='email' placeholder="Enter your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" [(ngModel)]="email"
                         #emailref="ngModel" />
                     <div class="margin-top30">
-                        <button [disabled]="emailref.errors && (emailref.touched || emailref.dirty)" [ngClass]="{'poiter-not-allowed':emailref.errors && (emailref.touched || emailref.dirty)}" class="btn btn-md btn-success btn-block send-button-margin-bottom" (click)="onReset()">Send password reset email</button>
+                        <button class="btn btn-primary btn-sm goto-login" [routerLink]="['/login']">Goto login</button>
+                        <button [disabled]="(emailref.errors && (emailref.touched || emailref.dirty)) || (!email)" [ngClass]="{'poiter-not-allowed':(emailref.errors && (emailref.touched || emailref.dirty)) || (!email)}" class="btn btn-md btn-success btn-block send-password-button btn-sm"
+                            (click)="onReset()">{{ forgotType }}</button>
                     </div>
                 </div>
             </div>
