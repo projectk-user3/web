@@ -4,5 +4,8 @@ export const AppConstants = {
     usernameSentMsg: 'Enter your email address and we will send you user id details.',
     passwordResetMsg: 'Enter your email address and we will send you a link to reset your password.',
     apiEndpoint: 'http://localhost:3000',
-    loginEndPoint: 'loginData'
+    loginEndPoint: 'loginData',
+    clientType: 'c',
+    brokerType: 'b',
+    adminType: 'a'
 };
