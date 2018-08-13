@@ -33,7 +33,7 @@
 
 .intialForm {
     margin: auto;
-    width: 336px;
+    width: 320px;
     max-height: 374px;
     .card-body {
         padding: 10px;
@@ -73,4 +73,12 @@
 
 .poiter-not-allowed {
     cursor: not-allowed;
+}
+
+.close-icon {
+    cursor: pointer;
+    pointer-events: all;
+    float: right !important;
+    margin-top: -9% !important;
+    margin-right: 5% !important;
 }

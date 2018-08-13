@@ -5,11 +5,10 @@
             <div class="row top-section">
                 <div class="col-sm-12 text-center">
                     <i class="fa fa-user-circle" aria-hidden="true" style="font-size: 69px;"></i>
-                    <p class="h2 weight-light">Reset your password</p>
+                    <p class="h2 weight-light"> {{ resetPwd }} </p>
                 </div>
-                <div class="alert alert-danger" role="alert" *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)">
-                    Invalid email address.
-                    <!-- <span class="fa fa-close close-icon"></span> -->
+                <div class="alert alert-danger alert-dismissible" role="alert" *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)">
+                    <a class="close" data-dismiss="alert" aria-label="close">&times;</a> Invalid email address.
                 </div>
 
             </div>
@@ -19,6 +18,7 @@
                     <p class="weight-normal"> {{ sentMsg }}</p>
                     <input [ngClass]="{'is-invalid': emailref.errors &&(emailref.touched || emailref.dirty)}" class="form-control" type="text" name='email' placeholder="Enter your email address" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" [(ngModel)]="email"
                         #emailref="ngModel" />
+                    <span *ngIf="email" (click)="email = null;" class="fa fa-times-circle form-control-feedback close-icon"></span>
                     <div class="margin-top30">
                         <button class="btn btn-primary btn-sm goto-login" [routerLink]="['/login']">Goto login</button>
                         <button [disabled]="(emailref.errors && (emailref.touched || emailref.dirty)) || (!email)" [ngClass]="{'poiter-not-allowed':(emailref.errors && (emailref.touched || emailref.dirty)) || (!email)}" class="btn btn-md btn-success btn-block send-password-button btn-sm"

@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
-import { RestService } from '../services/rest.service';
-import { AppConstants } from '../services/constants.config';
+import { Router } from '@angular/router';
+import { RestService } from '../../services/rest.service';
+import { AppConstants } from '../../services/constants.config';
 
 @Component({
   selector: 'app-login',
@@ -14,13 +14,14 @@ export class LoginComponent implements OnInit, OnDestroy {
   signInForm: FormGroup;
   isError: boolean;
   isServerSideError: boolean;
+  username = '';
+  password = '';
 
-  constructor(private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router, private _restService: RestService) { }
+  constructor(private _formBuilder: FormBuilder,
+    private _router: Router, private _restService: RestService) { }
 
   ngOnInit() {
-    this.signInForm = this.formBuilder.group({
+    this.signInForm = this._formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
@@ -36,10 +37,19 @@ export class LoginComponent implements OnInit, OnDestroy {
   onSignIn() {
     if (!this.signInForm.invalid) {
       this._restService.httpGetServiceCall(AppConstants.loginEndPoint).subscribe(
-        data => {
+        (data: any) => {
           this.isServerSideError = false;
           if (data) {
             console.log('Success');
+            // if (data.usertype.toLowercase() === AppConstants.adminType) {
+            //   this._router.navigate(['login']);
+            // } else if (data.usertype.toLowercase() === AppConstants.clientType) {
+            //   this._router.navigate(['login']);
+            // } else if (data.usertype.toLowercase() === AppConstants.brokerType) {
+            //   this._router.navigate(['login']);
+            // } else {
+            //   this._router.navigate(['login']);
+            // }
           } else {
             this.isError = true;
             console.log('Failure');

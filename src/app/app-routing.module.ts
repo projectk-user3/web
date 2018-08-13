@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { ForgotComponent } from './forgot/forgot.component';
+import { LoginComponent } from './login/login/login.component';
+import { ForgotComponent } from './login/forgot/forgot.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
