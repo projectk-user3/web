@@ -1,7 +1,8 @@
+import { GlobalErrorHandlerService } from './services/global-error-handler.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -10,6 +11,7 @@ import { LoginComponent } from './login/login/login.component';
 import { ForgotComponent } from './login/forgot/forgot.component';
 
 import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
+import { ErrorLogService } from './services/error-log.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,14 @@ import { RestrictInputDirective } from './directives/validation/restrict-input.d
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ErrorLogService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalErrorHandlerService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
