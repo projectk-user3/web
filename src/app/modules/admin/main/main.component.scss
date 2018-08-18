@@ -1,12 +1,15 @@
 .side-nav {
   padding-top: 45px;
+  webkit-transition: -webkit-transform 1s ease-in-out, width 1s ease-in-out;
+  -moz-transition: -moz-transform 1s ease-in-out, width 1s ease-in-out;
+  -o-transition: -o-transform 1s ease-in-out, width 1s ease-in-out;
+  transition: transform 1s ease-in-out, width 1s ease-in-out;
   aside {
+    position: fixed;
+    left: 0;
+    height: 100%;
     width: 250px;
     background-color: #222d32;
-    webkit-transition: -webkit-transform 1s ease-in-out, width 1s ease-in-out;
-    -moz-transition: -moz-transform 1s ease-in-out, width 1s ease-in-out;
-    -o-transition: -o-transform 1s ease-in-out, width 1s ease-in-out;
-    transition: transform 1s ease-in-out, width 1s ease-in-out;
     .fa {
       margin-right: 10px;
     }
@@ -22,24 +25,20 @@
         border-color: #3c8dbc !important;
       }
     }
-    .name {
-      webkit-transition: -webkit-transform 1s ease-in-out, width 1s ease-in-out;
-      -moz-transition: -moz-transform 1s ease-in-out, width 1s ease-in-out;
-      -o-transition: -o-transform 1s ease-in-out, width 1s ease-in-out;
-      transition: transform 1s ease-in-out, width 1s ease-in-out;
-    }
+  }
+  .col-sm {
+    padding-left: 250px;
   }
 }
 
 :host /deep/ .collapsable-navbar {
   .name {
-    // display: none;
-    width: 0;
-    overflow: hidden;
-    display: inline-block;
-    height: 0;
+    display: none;
   }
   .side-nav aside {
     width: 50px;
+  }
+  .col-sm {
+    padding-left: 50px !important;
   }
 }
