@@ -15,9 +15,6 @@ import { ErrorLogService } from './services/log/error-log.service';
 import { GlobalErrorHandlerService } from './services/error-handling/global-error-handler.service';
 import { AuthGuardService } from './services/authguard/auth-guard.service';
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,5 +40,6 @@ import { AuthGuardService } from './services/authguard/auth-guard.service';
     }
   ],
   bootstrap: [AppComponent]
+
 })
 export class AppModule { }

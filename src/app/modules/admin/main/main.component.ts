@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,24 +7,29 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
   childViews = [];
+  navbarStatus = false;
   selectedView: any;
 
-  constructor(private _router: Router) { }
+  constructor() { }
 
   ngOnInit() {
     this.childViews = [
       {
         tag: 'dashboard',
-        name: 'Dashboard'
+        name: 'Dashboard',
+        icon: 'fa-dashboard'
       }, {
         tag: 'search',
-        name: 'Search'
+        name: 'Search',
+        icon: 'fa-search'
       }, {
         tag: 'my-account',
-        name: 'My Account'
+        name: 'My Account',
+        icon: 'fa-user'
       }, {
         tag: 'manage-profiles',
-        name: 'Manage Profiles'
+        name: 'Manage Profiles',
+        icon: 'fa-product-hunt'
       }
     ];
     if (sessionStorage.getItem('admin-view')) {
@@ -41,8 +45,8 @@ export class MainComponent implements OnInit {
     this.selectedView = view;
   }
 
-  logout() {
-    sessionStorage.clear();
-    this._router.navigate(['/login']);
+  onNavbarClicked(value) {
+    this.navbarStatus = value;
   }
+
 }
