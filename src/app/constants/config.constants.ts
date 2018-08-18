@@ -7,9 +7,9 @@ export const AppConstants = {
     'Enter your email address and we will send you a link to reset your password.',
   apiEndpoint: 'http://localhost:3000',
   loginEndPoint: 'loginData',
-  clientType: 'c',
-  brokerType: 'b',
-  adminType: 'a'
+  clientType: 'Client',
+  brokerType: 'Broker',
+  adminType: 'Administrator'
 };
 
 export class ErrorConstants {

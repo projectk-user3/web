@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AppConstants } from '../../services/constants.config';
+import { AppConstants } from '../../../constants/config.constants';
 
 @Component({
   selector: 'app-forgot',

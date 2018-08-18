@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { AppConstants } from './constants.config';
+import { AppConstants } from '../constants/config.constants';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 

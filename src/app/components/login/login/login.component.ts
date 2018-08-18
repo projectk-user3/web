@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { RestService } from '../../services/rest.service';
-import { AppConstants } from '../../services/constants.config';
+import { AppConstants } from '../../../constants/config.constants';
+import { RestService } from '../../../services/rest.service';
+
 
 @Component({
   selector: 'app-login',
@@ -41,15 +42,16 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.isServerSideError = false;
           if (data) {
             console.log('Success');
-            // if (data.usertype.toLowercase() === AppConstants.adminType) {
-            //   this._router.navigate(['login']);
-            // } else if (data.usertype.toLowercase() === AppConstants.clientType) {
-            //   this._router.navigate(['login']);
-            // } else if (data.usertype.toLowercase() === AppConstants.brokerType) {
-            //   this._router.navigate(['login']);
-            // } else {
-            //   this._router.navigate(['login']);
-            // }
+            sessionStorage.setItem('loginUser', JSON.stringify(data));
+            if (data.usertype.toLowerCase() === AppConstants.adminType.toLowerCase()) {
+              this._router.navigate(['admin']);
+            } else if (data.usertype.toLowerCase() === AppConstants.clientType.toLowerCase()) {
+              this._router.navigate(['client']);
+            } else if (data.usertype.toLowerCase() === AppConstants.brokerType.toLowerCase()) {
+              this._router.navigate(['broker']);
+            } else {
+              this._router.navigate(['login']);
+            }
           } else {
             this.isError = true;
             console.log('Failure');

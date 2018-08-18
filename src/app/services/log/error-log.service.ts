@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ErrorConstants } from './constants.config';
+import { ErrorConstants } from '../../constants/config.constants';
 
 @Injectable()
 export class ErrorLogService {
-  constructor() {}
+  constructor() { }
   logError(error: any) {
     // Returns a date converted to a string using Universal Coordinated Time (UTC).
     const date = new Date().toUTCString();

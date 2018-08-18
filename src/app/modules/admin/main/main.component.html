@@ -1,0 +1,11 @@
+<button class="btn mRt5" style="float: right;margin-right: 5%;margin-top: 2%;" (click)="logout()">Logout</button>
+<div class="row">
+    <div style="width: 20%;margin-top:5%;margin-left:5%;">
+        <div *ngFor="let item of childViews">
+            <button style="margin-bottom: 10px;" class="btn mRt5" [ngClass]="{'btn-info': selectedView?.tag == item?.tag}" (click)="viewSelected(item)" [routerLink]=[item?.tag] routerLinkActive="active">{{item?.name}}</button>
+        </div>
+    </div>
+    <div style="margin-top:10%;">
+        <router-outlet></router-outlet>
+    </div>
+</div>

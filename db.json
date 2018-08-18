@@ -1,7 +1,7 @@
 {
     "loginData": {
-        "username": "web",
-        "password": "web",
-        "usertype": "b"
+        "username": "Administrator",
+        "password": "Administrator",
+        "usertype": "Administrator"
     }
 }
