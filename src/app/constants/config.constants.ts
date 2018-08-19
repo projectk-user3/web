@@ -5,8 +5,8 @@ export const AppConstants = {
     'Enter your email address and we will send you user id details.',
   passwordResetMsg:
     'Enter your email address and we will send you a link to reset your password.',
-  apiEndpoint: 'http://localhost:3000',
-  loginEndPoint: 'loginData',
+  apiEndpoint: 'http://localhost:8080',
+  loginEndPoint: 'ProjectK/rest/login/validate',
   clientType: 'Client',
   brokerType: 'Broker',
   adminType: 'Administrator'
