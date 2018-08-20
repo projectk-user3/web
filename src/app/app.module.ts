@@ -8,18 +8,30 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { ForgotComponent } from './components/login/forgot/forgot.component';
-
-import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
+import { MainComponent } from './components/main/main.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SettingsComponent } from './components/settings/settings.component';
 
 import { ErrorLogService } from './services/log/error-log.service';
 import { GlobalErrorHandlerService } from './services/error-handling/global-error-handler.service';
 import { AuthGuardService } from './services/authguard/auth-guard.service';
+
+import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgotComponent,
+    MainComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent,
+    SettingsComponent,
     RestrictInputDirective
   ],
   imports: [
@@ -40,6 +52,5 @@ import { AuthGuardService } from './services/authguard/auth-guard.service';
     }
   ],
   bootstrap: [AppComponent]
-
 })
 export class AppModule { }

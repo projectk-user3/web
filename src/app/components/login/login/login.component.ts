@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AppConstants } from '../../../constants/config.constants';
 import { RestService } from '../../../services/rest.service';
@@ -43,15 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           if (data) {
             console.log('Success');
             sessionStorage.setItem('loginUser', JSON.stringify(data));
-            if (data.usertype.toLowerCase() === AppConstants.adminType.toLowerCase()) {
-              this._router.navigate(['admin']);
-            } else if (data.usertype.toLowerCase() === AppConstants.clientType.toLowerCase()) {
-              this._router.navigate(['client']);
-            } else if (data.usertype.toLowerCase() === AppConstants.brokerType.toLowerCase()) {
-              this._router.navigate(['broker']);
-            } else {
-              this._router.navigate(['login']);
-            }
+            this._router.navigate(['main']);
           } else {
             this.isError = true;
             console.log('Failure');
