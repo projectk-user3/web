@@ -10,7 +10,7 @@ export class RestrictInputDirective {
 
     private regexMap = {
         integer: '^[0-9]*$',
-        words: '([A-z]*\\s)*'
+        username: '([A-z@]*\\s)*'
     };
 
     constructor(private _elementRef: ElementRef) { }

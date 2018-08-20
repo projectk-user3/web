@@ -34,16 +34,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.isError = false;
     this.isServerSideError = false;
   }
-    
- 
 
   onSignIn() {
     if (!this.signInForm.invalid) {
-      var postData = {
-        'loginId': this.username,
-        'password': this.password
-      };
-      this._restService.httpPostCall(AppConstants.loginEndPoint,postData,).subscribe(
+      this._restService.httpGetServiceCall(AppConstants.loginEndPoint).subscribe(
         (data: any) => {
           this.isServerSideError = false;
           if (data) {
