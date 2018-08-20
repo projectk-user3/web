@@ -1,7 +1,10 @@
 {
+    //http://localhost:8080/ProjectK/rest/login/validate -- POST
+    // {"loginId":"mahesh","password":"mani1008"} 
     "loginData": {
-        "username": "Administrator",
-        "password": "Administrator",
-        "usertype": "Administrator"
+        "statusCode":200,
+        "message":"Login Success",
+        "data":"eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJUZXN0IEZpcnN0IE5hbWUgOTciLCJsYXN0TmFtZSI6IlRlc3QgTGFzdCBOYW1lIDk3IiwiY2xpZW50SWQiOiI4UDIiLCJwaG90b1BhdGgiOm51bGwsInBlcm1pc3Npb25zIjpbIk1ZUFJPRklMRSIsIkRBU0hCT0FSRCIsIlNFQVJDSCJdLCJ1c2VyUm9sZSI6bnVsbCwiZXhwIjoxNTM0NzMzODE0LCJ1c2VySWQiOiJtYWhlc2hAOFAyIiwidXNlcktleSI6bnVsbH0.vmv95LVoe9j7cTvPYpls2zWKQKO_kFQNeSBGGlw75Zk"
     }
+
 }
