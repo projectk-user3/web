@@ -32,10 +32,4 @@ export class RestService {
     return this._httpClient.get(`${this.baseJsonServerUrl + '/' + serviceUrl}`, { headers: this.getHttpHeaders() })
       .pipe(map(res => res), catchError(this._handleError));
   }
-  httpPostCall(serviceUrl, param) {
-      // const url = this.config.appBaseURL + this.apiURL + serviceURL;
-      ;
-      return this._httpClient.post(`${this.baseJsonServerUrl + '/' + serviceUrl}`, JSON.stringify(param), { headers: this.getHttpHeaders() });
-    
-  }
 }
