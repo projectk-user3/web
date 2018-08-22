@@ -10,88 +10,23 @@
                 <p>Project K</p>
             </div>
         </div>
-        <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-            <li class="active treeview menu-open">
+            <li *ngFor="let view of views" class="treeview">
                 <a href="#">
-                    <i class="fa fa-dashboard"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-search"></i>
-                    <span>Search</span>
-                    <span class="pull-right-container">
+                    <i class={{view?.icon}}></i>
+                    <span>{{view?.name}}</span>
+                    <span class="pull-right-container" *ngIf="view?.child_views?.length > 0">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
                 </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="pages/layout/top-nav.html">
-                            <i class="fa fa-circle-o"></i> By Id</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/boxed.html">
-                            <i class="fa fa-circle-o"></i> Basic</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/fixed.html">
-                            <i class="fa fa-circle-o"></i> Advanced</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/collapsed-sidebar.html">
-                            <i class="fa fa-circle-o"></i> Astrology</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/collapsed-sidebar.html">
-                            <i class="fa fa-circle-o"></i> Distance</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/collapsed-sidebar.html">
-                            <i class="fa fa-circle-o"></i> Calendar</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/collapsed-sidebar.html">
-                            <i class="fa fa-circle-o"></i> Keyword</a>
-                    </li>
-                    <li>
-                        <a href="pages/layout/collapsed-sidebar.html">
-                            <i class="fa fa-circle-o"></i> D3Js</a>
+                <ul class="treeview-menu" *ngIf="view?.child_views?.length > 0">
+                    <li *ngFor="let child_view of view?.child_views">
+                        <a [routerLink]=[child_view?.tag] routerLinkActive="active">
+                            <i class="{{child_view?.icon}}"></i>{{child_view?.name}}
+                        </a>
                     </li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    <span>My Account</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-bullhorn"></i>
-                    <span>News</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-address-card"></i>
-                    <span>Contact Us</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-info-circle"></i>
-                    <span>About Us</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-sign-out"></i>
-                    <span>Logout</span>
-                </a>
-            </li>
         </ul>
     </section>
-    <!-- /.sidebar -->
 </aside>

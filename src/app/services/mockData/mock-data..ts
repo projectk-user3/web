@@ -6,6 +6,7 @@ export class MockData implements InMemoryDbService {
         const loginData = {
             'statusCode': 200,
             'message': 'Login Success',
+            'loginType': 'User',
             'data': 'eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWU'
         };
         return { loginData };

@@ -6,7 +6,10 @@ export const AppConstants = {
   passwordResetMsg:
     'Enter your email address and we will send you a link to reset your password.',
   apiEndpoint: 'api',
-  loginEndPoint: 'loginData'
+  loginEndPoint: 'loginData',
+  admin: 'admin',
+  client: 'client',
+  user: 'user'
 };
 
 export class ErrorConstants {
