@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login/login.component';
@@ -20,6 +21,7 @@ import { AuthGuardService } from './services/authguard/auth-guard.service';
 
 import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
 
+import { MockData } from './services/mockData/mock-data.';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { RestrictInputDirective } from './directives/validation/restrict-input.d
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(MockData),
   ],
   providers: [
     ErrorLogService,
