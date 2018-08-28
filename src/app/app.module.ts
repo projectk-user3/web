@@ -16,7 +16,8 @@ import { AuthGuardService } from './services/authguard/auth-guard.service';
 
 import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
 
-import { MockData } from './services/mockData/mock-data.';
+import { MockData } from './mockData/mock-data.';
+
 
 
 @NgModule({

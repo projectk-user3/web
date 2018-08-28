@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { UserRoutingModule } from './user-routing.module';
 
 import {
-  UserDashboardComponent, UserSearchByIdComponent, UserSearchByBasicComponent, UserSearchByAdvancedComponent,
-  UserSearchByAstrologyComponent, UserSearchByDistanceComponent, UserSearchByCalendarComponent, UserSearchByKeywordComponent,
-  UserSearchByD3jsComponent, UserNewsComponent, UserMyAccountComponent, MainComponent, HeaderComponent, FooterComponent,
-  MenuComponent, SettingsComponent
-} from './user.index';
+  DashboardComponent, SearchByIdComponent, SearchByBasicComponent, SearchByAdvancedComponent,
+  SearchByAstrologyComponent, SearchByDistanceComponent, SearchByCalendarComponent, SearchByKeywordComponent,
+  SearchByD3jsComponent, NewsComponent, MyAccountComponent, MainComponent, HeaderComponent, FooterComponent,
+  MenuComponent
+} from './index';
 
 
 @NgModule({
@@ -21,17 +21,16 @@ import {
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    SettingsComponent,
-    UserDashboardComponent,
-    UserSearchByIdComponent,
-    UserSearchByBasicComponent,
-    UserSearchByAdvancedComponent,
-    UserSearchByAstrologyComponent,
-    UserSearchByDistanceComponent,
-    UserSearchByCalendarComponent,
-    UserSearchByKeywordComponent,
-    UserSearchByD3jsComponent,
-    UserMyAccountComponent,
-    UserNewsComponent]
+    DashboardComponent,
+    SearchByIdComponent,
+    SearchByBasicComponent,
+    SearchByAdvancedComponent,
+    SearchByAstrologyComponent,
+    SearchByDistanceComponent,
+    SearchByCalendarComponent,
+    SearchByKeywordComponent,
+    SearchByD3jsComponent,
+    MyAccountComponent,
+    NewsComponent]
 })
 export class UserModule { }

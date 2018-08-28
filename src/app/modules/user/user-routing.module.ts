@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from '../../services/authguard/auth-guard.service';
 import {
-  UserDashboardComponent, UserSearchByIdComponent, UserSearchByBasicComponent, UserSearchByAdvancedComponent,
-  UserSearchByAstrologyComponent, UserSearchByDistanceComponent, UserSearchByCalendarComponent, UserSearchByKeywordComponent,
-  UserSearchByD3jsComponent, UserNewsComponent, UserMyAccountComponent
-} from './user.index';
+  DashboardComponent, SearchByIdComponent, SearchByBasicComponent, SearchByAdvancedComponent,
+  SearchByAstrologyComponent, SearchByDistanceComponent, SearchByCalendarComponent, SearchByKeywordComponent,
+  SearchByD3jsComponent, NewsComponent, MyAccountComponent
+} from './index';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 import { MainComponent } from '../../components/main/main.component';
 
@@ -16,21 +16,21 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
     children: [
-      { path: '', redirectTo: 'user-dashboard' },
-      { path: 'user-dashboard', component: UserDashboardComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-id', component: UserSearchByIdComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-basic', component: UserSearchByBasicComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-advanced', component: UserSearchByAdvancedComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-astrology', component: UserSearchByAstrologyComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-distance', component: UserSearchByDistanceComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-calendar', component: UserSearchByCalendarComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-keyword', component: UserSearchByKeywordComponent, canActivate: [AuthGuardService] },
-      { path: 'user-search-by-D3Js', component: UserSearchByD3jsComponent, canActivate: [AuthGuardService] },
-      { path: 'user-my-account', component: UserMyAccountComponent, canActivate: [AuthGuardService] },
-      { path: 'user-news', component: UserNewsComponent, canActivate: [AuthGuardService] },
-      // { path: 'user-contact-us', component: UserDashboardComponent, canActivate: [AuthGuardService] },
-      // { path: 'user-about-us', component: UserDashboardComponent, canActivate: [AuthGuardService] },
-      { path: '**', redirectTo: 'user-dashboard' },
+      { path: '', redirectTo: 'dashboard' },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-id', component: SearchByIdComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-basic', component: SearchByBasicComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-advanced', component: SearchByAdvancedComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-astrology', component: SearchByAstrologyComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-distance', component: SearchByDistanceComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-calendar', component: SearchByCalendarComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-keyword', component: SearchByKeywordComponent, canActivate: [AuthGuardService] },
+      { path: 'search-by-D3Js', component: SearchByD3jsComponent, canActivate: [AuthGuardService] },
+      { path: 'my-account', component: MyAccountComponent, canActivate: [AuthGuardService] },
+      { path: 'news', component: NewsComponent, canActivate: [AuthGuardService] },
+      // { path: 'contact-us', component: DashboardComponent, canActivate: [AuthGuardService] },
+      // { path: 'about-us', component: DashboardComponent, canActivate: [AuthGuardService] },
+      { path: '**', redirectTo: 'dashboard' },
     ]
   }
 ];
