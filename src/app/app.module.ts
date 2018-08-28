@@ -9,11 +9,6 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { ForgotComponent } from './components/login/forgot/forgot.component';
-import { MainComponent } from './components/main/main.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { SettingsComponent } from './components/settings/settings.component';
 
 import { ErrorLogService } from './services/log/error-log.service';
 import { GlobalErrorHandlerService } from './services/error-handling/global-error-handler.service';
@@ -29,11 +24,6 @@ import { MockData } from './services/mockData/mock-data.';
     AppComponent,
     LoginComponent,
     ForgotComponent,
-    MainComponent,
-    HeaderComponent,
-    FooterComponent,
-    MenuComponent,
-    SettingsComponent,
     RestrictInputDirective
   ],
   imports: [

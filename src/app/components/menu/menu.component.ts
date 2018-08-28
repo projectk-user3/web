@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SuperAdminViews } from '../super-admin-views.config';
-import { ClientViews } from '../client-views.config';
-import { UserViews } from '../user-views.config';
-import { CommonViews } from '../common-views.config';
+
 import { AppConstants } from '../../constants/config.constants';
+
+import { SuperAdminViews } from '../../constants/super-admin-views.config';
+import { ClientViews } from '../../constants/client-views.config';
+import { UserViews } from '../../constants/user-views.config';
+import { CommonViews } from '../../constants/common-views.config';
 
 @Component({
   selector: 'app-menu',

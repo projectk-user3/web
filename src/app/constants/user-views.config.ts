@@ -5,7 +5,7 @@ export const UserViews = [
         name: 'Dashboard',
         icon: 'fa fa-dashboard'
     }, {
-        tag: 'user-search',
+        tag: 'user-search-by-id',
         name: 'Search',
         icon: 'fa fa-search',
         child_views: [

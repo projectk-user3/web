@@ -12,13 +12,19 @@
         </div>
         <ul class="sidebar-menu" data-widget="tree">
             <li *ngFor="let view of views" class="treeview">
-                <a href="#">
+                <a *ngIf="view?.child_views?.length" routerLinkActive="active" style="cursor:pointer;">
                     <i class={{view?.icon}}></i>
                     <span>{{view?.name}}</span>
-                    <span class="pull-right-container" *ngIf="view?.child_views?.length > 0">
+                    <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
                 </a>
+
+                <a *ngIf="!view?.child_views?.length" [routerLink]=[view?.tag] routerLinkActive="active">
+                    <i class={{view?.icon}}></i>
+                    <span>{{view?.name}}</span>
+                </a>
+
                 <ul class="treeview-menu" *ngIf="view?.child_views?.length > 0">
                     <li *ngFor="let child_view of view?.child_views">
                         <a [routerLink]=[child_view?.tag] routerLinkActive="active">
