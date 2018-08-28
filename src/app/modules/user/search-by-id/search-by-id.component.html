@@ -1,3 +1,12 @@
-<p>
-    search-by-id works!
+<p class="profileId">
+    <strong>Profile ID: </strong> <input type="text" [(ngModel)]="profileId">
+    <button [disabled]="!profileId" class="btn btn-sm btn-primary profileSearchBtn" [ngClass]="{'poiter-not-allowed':!profileId}" (click)="searchById();">Search</button>
 </p>
+
+<div *ngFor="let item of byIdProfileList">
+    {{ item.name }} {{ item.age }}
+</div>
+
+<div *ngIf="noDataPresent">
+    No data available.
+</div>

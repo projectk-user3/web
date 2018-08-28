@@ -9,11 +9,14 @@ import {
   SearchByD3jsComponent, NewsComponent, MyAccountComponent, MainComponent, HeaderComponent, FooterComponent,
   MenuComponent
 } from './index';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     UserRoutingModule
   ],
   declarations: [

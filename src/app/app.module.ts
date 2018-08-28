@@ -16,8 +16,6 @@ import { AuthGuardService } from './services/authguard/auth-guard.service';
 
 import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
 
-import { MockData } from './mockData/mock-data.';
-
 
 
 @NgModule({
@@ -33,8 +31,7 @@ import { MockData } from './mockData/mock-data.';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(MockData),
+    HttpClientModule
   ],
   providers: [
     ErrorLogService,

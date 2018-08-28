@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../../../services/rest.service';
+import { AppConstants } from '../../../constants/config.constants';
 
 @Component({
   selector: 'app-search-by-id',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchByIdComponent implements OnInit {
 
-  constructor() { }
+  profileId: '';
+  byIdProfileList: any;
+  noDataPresent = false;
+
+  constructor(private _restService: RestService) { }
 
   ngOnInit() {
   }
 
+  searchById() {
+    this._restService.httpGetServiceCall(AppConstants.searchByIdEndPoint).subscribe((res: any) => {
+      this.byIdProfileList = res.data;
+    }, error => {
+      this.noDataPresent = true;
+    });
+  }
 }

@@ -15,9 +15,9 @@ export class RestService {
 
   private _handleError(errorResponse: HttpErrorResponse) {
     if (errorResponse instanceof ErrorEvent) {
-      console.error('Client Side issue' + errorResponse.message);
+      console.error('Client Side issue:: ' + errorResponse.message);
     } else {
-      console.error('Server Side issue' + errorResponse.message);
+      console.error('Server Side issue:: ' + errorResponse.message);
     }
     return throwError(errorResponse);
   }
@@ -29,6 +29,10 @@ export class RestService {
   }
 
   httpGetServiceCall(serviceUrl) {
+    if (AppConstants.useMockData) {
+      const restURL = 'assets/mockData' + serviceUrl;
+      return this._httpClient.get(`${restURL}.json`).pipe(map(res => res), catchError(this._handleError));
+    }
     return this._httpClient.get(`${this.baseJsonServerUrl + '/' + serviceUrl}`, { headers: this.getHttpHeaders() })
       .pipe(map(res => res), catchError(this._handleError));
   }
