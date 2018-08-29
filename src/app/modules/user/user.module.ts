@@ -6,9 +6,11 @@ import { UserRoutingModule } from './user-routing.module';
 import {
   DashboardComponent, SearchByIdComponent, SearchByBasicComponent, SearchByAdvancedComponent,
   SearchByAstrologyComponent, SearchByDistanceComponent, SearchByCalendarComponent, SearchByKeywordComponent,
-  SearchByD3jsComponent, NewsComponent, MyAccountComponent, MainComponent, HeaderComponent, FooterComponent,
-  MenuComponent
-} from './index';
+  SearchByD3jsComponent, NewsComponent, MyProfileComponent
+} from './user-index';
+
+import { MainComponent, HeaderComponent, FooterComponent, MenuComponent, AboutUsComponent, ContactUsComponent } from '../components-index';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -33,7 +35,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SearchByCalendarComponent,
     SearchByKeywordComponent,
     SearchByD3jsComponent,
-    MyAccountComponent,
-    NewsComponent]
+    MyProfileComponent,
+    NewsComponent,
+    AboutUsComponent,
+    ContactUsComponent
+  ]
 })
 export class UserModule { }

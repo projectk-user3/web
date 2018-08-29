@@ -3,8 +3,54 @@
     <button [disabled]="!profileId" class="btn btn-sm btn-primary profileSearchBtn" [ngClass]="{'poiter-not-allowed':!profileId}" (click)="searchById();">Search</button>
 </p>
 
-<div *ngFor="let item of byIdProfileList">
-    {{ item.name }} {{ item.age }}
+<div *ngIf="profile">
+    <h5 class="profileSearchResultHeader">Details of '{{profileId}}'</h5>
+    <div class="container-fluid profileSearchResult">
+        <div class="row">
+            <div class="col-sm-3">
+                First Name :
+            </div>
+            <div class="col-sm-5">
+                {{ profile?.firstname }}
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                Last Name :
+            </div>
+            <div class="col-sm-5">
+                {{ profile?.lastname }}
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                Gender Name :
+            </div>
+            <div class="col-sm-5">
+                {{ profile?.gender === 'M' ? 'Male': 'Female'}}
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-sm-3">
+                Date Of Birth :
+            </div>
+            <div class="col-sm-5">
+                {{ profile?.dob | date: 'medium'}}
+            </div>
+        </div>
+        <div class="col-sm-4 myImgDiv">
+            <img #myImg class="myImg" src="/assets/images/searchById-profileResponse.PNG" alt="{{profile?.firstname}}" (click)="imageClicked = true">
+        </div>
+    </div>
+</div>
+
+<div #myModal class="modal" *ngIf="imageClicked" style="display: block">
+    <span class="close" (click)="imageClicked = false">&times;</span>
+    <img class="modal-content" src="/assets/images/searchById-profileResponse.PNG">
+    <div class="modelCaption">{{profile?.firstname}}</div>
 </div>
 
 <div *ngIf="noDataPresent">

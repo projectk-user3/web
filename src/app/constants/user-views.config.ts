@@ -3,11 +3,13 @@ export const UserViews = [
     {
         tag: 'dashboard',
         name: 'Dashboard',
-        icon: 'fa fa-dashboard'
+        icon: 'fa fa-dashboard',
+        show: false
     }, {
         tag: 'search',
         name: 'Search',
         icon: 'fa fa-search',
+        show: false,
         child_views: [
             {
                 tag: 'search-by-id',
@@ -51,24 +53,14 @@ export const UserViews = [
             }
         ]
     }, {
-        tag: 'my-account',
-        name: 'My Account',
-        icon: 'fa fa-user'
+        tag: 'myprofile',
+        name: 'My Profile',
+        icon: 'fa fa-user',
+        show: false
     }, {
         tag: 'news',
         name: 'News',
-        icon: 'fa fa-bullhorn'
-    }, {
-        tag: 'contact-us',
-        name: 'Contact Us',
-        icon: 'fa fa-address-card'
-    }, {
-        tag: 'about-us',
-        name: 'About Us',
-        icon: 'fa fa-info-circle'
-    }, {
-        tag: 'logout',
-        name: 'Logout',
-        icon: 'fa fa-sign-out'
+        icon: 'fa fa-bullhorn',
+        show: false
     }
 ];

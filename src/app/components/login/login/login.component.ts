@@ -41,9 +41,20 @@ export class LoginComponent implements OnInit, OnDestroy {
         (data: any) => {
           this.isServerSideError = false;
           if (data) {
-            localStorage.setItem('loginType', data.loginType);
-            localStorage.setItem('loginUser', JSON.stringify(data));
-            const loginType = '/' + data.loginType.toLowerCase();
+            const responseData = data.data;
+            let parseResponseData: any = '';
+            const base64Url = responseData.split('.')[1];
+            if (base64Url) {
+              parseResponseData = JSON.parse(atob(base64Url.replace('-', '+').replace('_', '/')));
+            }
+            localStorage.setItem('loginId', this.username);
+            localStorage.setItem('password', this.password);
+            localStorage.setItem('parseResponseData', JSON.stringify(parseResponseData));
+            localStorage.setItem('loginUser', JSON.stringify(responseData));
+            // localStorage.setItem('loginType', parseResponseData.userRole.toLowerCase());
+            const loginType = '/user';
+            localStorage.setItem('loginType', 'user');
+            // + parseResponseData.userRole.toLowerCase();
             this._router.navigate([loginType]);
           } else {
             this.isError = true;

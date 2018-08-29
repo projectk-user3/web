@@ -1,13 +1,16 @@
-import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from '../../services/authguard/auth-guard.service';
 import {
   DashboardComponent, SearchByIdComponent, SearchByBasicComponent, SearchByAdvancedComponent,
   SearchByAstrologyComponent, SearchByDistanceComponent, SearchByCalendarComponent, SearchByKeywordComponent,
-  SearchByD3jsComponent, NewsComponent, MyAccountComponent
-} from './index';
+  SearchByD3jsComponent, NewsComponent, MyProfileComponent
+} from './user-index';
+
+import { MainComponent, ContactUsComponent, AboutUsComponent } from '../components-index';
+
 import { ModuleWithProviders } from '@angular/compiler/src/core';
-import { MainComponent } from '../../components/main/main.component';
+
 
 
 
@@ -26,10 +29,10 @@ const routes: Routes = [
       { path: 'search-by-calendar', component: SearchByCalendarComponent, canActivate: [AuthGuardService] },
       { path: 'search-by-keyword', component: SearchByKeywordComponent, canActivate: [AuthGuardService] },
       { path: 'search-by-D3Js', component: SearchByD3jsComponent, canActivate: [AuthGuardService] },
-      { path: 'my-account', component: MyAccountComponent, canActivate: [AuthGuardService] },
+      { path: 'myprofile', component: MyProfileComponent, canActivate: [AuthGuardService] },
       { path: 'news', component: NewsComponent, canActivate: [AuthGuardService] },
-      // { path: 'contact-us', component: DashboardComponent, canActivate: [AuthGuardService] },
-      // { path: 'about-us', component: DashboardComponent, canActivate: [AuthGuardService] },
+      { path: 'contact-us', component: ContactUsComponent, canActivate: [AuthGuardService] },
+      { path: 'about-us', component: AboutUsComponent, canActivate: [AuthGuardService] },
       { path: '**', redirectTo: 'dashboard' },
     ]
   }

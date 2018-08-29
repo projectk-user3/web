@@ -22,10 +22,17 @@ export class RestService {
     return throwError(errorResponse);
   }
 
-  getHttpHeaders() {
-    return new HttpHeaders()
-      .set('Accept', 'application/json')
-      .set('Content-Type', 'application/json');
+  getHttpHeaders(serviceUrl) {
+    const httpHeaders = new HttpHeaders();
+    httpHeaders.set('Accept', 'application/json');
+    httpHeaders.set('Content-Type', 'application/json');
+    if (serviceUrl !== AppConstants.loginEndPoint) {
+      httpHeaders.set('Authorization', 'Bearer' + localStorage.getItem('loginUser'));
+    } else {
+      httpHeaders.set('loginId', localStorage.getItem('loginId'));
+      httpHeaders.set('password', localStorage.getItem('password'));
+    }
+    return httpHeaders;
   }
 
   httpGetServiceCall(serviceUrl) {
@@ -33,7 +40,7 @@ export class RestService {
       const restURL = 'assets/mockData' + serviceUrl;
       return this._httpClient.get(`${restURL}.json`).pipe(map(res => res), catchError(this._handleError));
     }
-    return this._httpClient.get(`${this.baseJsonServerUrl + '/' + serviceUrl}`, { headers: this.getHttpHeaders() })
+    return this._httpClient.get(`${this.baseJsonServerUrl + '/' + serviceUrl}`, { headers: this.getHttpHeaders(serviceUrl) })
       .pipe(map(res => res), catchError(this._handleError));
   }
 }

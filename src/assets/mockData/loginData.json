@@ -1,6 +1,5 @@
 {
     "statusCode": 200,
     "message": "Login Success",
-    "loginType": "User",
-    "data": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWU"
+    "data": "eyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJUZXN0IEZpcnN0IE5hbWUgOTciLCJsYXN0TmFtZSI6IlRlc3QgTGFzdCBOYW1lIDk3IiwiY2xpZW50SWQiOiI4UDIiLCJwaG90b1BhdGgiOm51bGwsInBlcm1pc3Npb25zIjpbIk1ZUFJPRklMRSIsIkRBU0hCT0FSRCIsIlNFQVJDSCJdLCJ1c2VyUm9sZSI6bnVsbCwiZXhwIjoxNTM1NTcyNjg3LCJ1c2VySWQiOiJtYWhlc2hAOFAyIiwidXNlcktleSI6bnVsbH0.GewOwk4L23HyNcdxNQTQsAj73vugtCM4Ey4ilMVjiYU"
 }

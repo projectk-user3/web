@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { RestService } from '../../../services/rest.service';
 import { AppConstants } from '../../../constants/config.constants';
 
@@ -10,8 +10,13 @@ import { AppConstants } from '../../../constants/config.constants';
 export class SearchByIdComponent implements OnInit {
 
   profileId: '';
-  byIdProfileList: any;
+  profile: any;
   noDataPresent = false;
+  imageClicked = false;
+  // @ViewChild('myImg') myImg: ElementRef;
+  // @ViewChild('myModal') myModal: ElementRef;
+  // @ViewChild('modalImg') modalImg: ElementRef;
+  // @ViewChild('modalCaption') modalCaption: ElementRef;
 
   constructor(private _restService: RestService) { }
 
@@ -20,9 +25,15 @@ export class SearchByIdComponent implements OnInit {
 
   searchById() {
     this._restService.httpGetServiceCall(AppConstants.searchByIdEndPoint).subscribe((res: any) => {
-      this.byIdProfileList = res.data;
+      this.profile = res;
     }, error => {
       this.noDataPresent = true;
     });
   }
+
+  // imgClick() {
+  //   this.myModal.nativeElement.style.display = 'block';
+  //   this.modalImg.nativeElement.src = '/assets/images/searchById-profileResponse.PNG';
+  //   this.modalCaption.nativeElement.innerHTML = this.profile.firstname;
+  // }
 }
