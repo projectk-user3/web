@@ -20,8 +20,7 @@
 
 .myImgDiv {
     float: right;
-    margin-top: -14%;
-    padding-top: 1%;
+    margin-top: -12%;
 }
 
 .myImg {
@@ -123,6 +122,7 @@
 }
 
 .modelCaption {
+    font-weight: bold;
     text-align: center;
     color: white;
     padding-top: 10px;
@@ -133,7 +133,38 @@
 /* 100% Image Width on Smaller Screens */
 
 @media only screen and (max-width: 700px) {
+    .close {
+        position: relative;
+        top: 10px;
+        right: 15px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
     .modal-content {
+        margin: auto;
+        display: block;
         width: 100%;
+        max-width: 700px;
+        top: 10%;
+        left: 5%;
+    }
+    .myImgDiv {
+        float: right;
+        margin-top: -63%;
+    }
+    .modelCaption {
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        padding-top: 16%;
+        margin-left: 4%;
     }
 }

@@ -20,25 +20,25 @@
           </span>
                 </a>
 
-                <a *ngIf="!view?.child_views?.length && view?.show" [routerLink]=[view?.tag] routerLinkActive="active">
+                <a *ngIf="!view?.child_views?.length && view?.show" [routerLink]=[view?.tag] data-toggle="push-menu" href="#" routerLinkActive="active">
                     <i class={{view?.icon}}></i>
                     <span>{{view?.name}}</span>
                 </a>
 
                 <ul class="treeview-menu" *ngIf="view?.child_views?.length > 0">
                     <li *ngFor="let child_view of view?.child_views">
-                        <a [routerLink]=[child_view?.tag] routerLinkActive="active">
+                        <a [routerLink]=[child_view?.tag] routerLinkActive="active" data-toggle="push-menu" href="#">
                             <i class="{{child_view?.icon}}"></i>{{child_view?.name}}
                         </a>
                     </li>
                 </ul>
             </li>
             <li *ngFor="let view of commonViews" class="treeview">
-                <a *ngIf="view?.inlineView" routerLinkActive="active" style="cursor:pointer;" (click)="logout();">
+                <a *ngIf="view?.inlineView" data-toggle="push-menu" href="#" routerLinkActive="active" style="cursor:pointer;" (click)="logout();">
                     <i class={{view?.icon}}></i>
                     <span>{{view?.name}}</span>
                 </a>
-                <a *ngIf="!view?.inlineView" [routerLink]=[view?.tag] routerLinkActive="active">
+                <a *ngIf="!view?.inlineView" data-toggle="push-menu" href="#" [routerLink]=[view?.tag] routerLinkActive="active">
                     <i class={{view?.icon}}></i>
                     <span>{{view?.name}}</span>
                 </a>

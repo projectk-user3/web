@@ -42,15 +42,15 @@
             </div>
         </div>
         <div class="col-sm-4 myImgDiv">
-            <img #myImg class="myImg" src="/assets/images/searchById-profileResponse.PNG" alt="{{profile?.firstname}}" (click)="imageClicked = true">
+            <img #myImg class="myImg" src="/assets/images/Pawan.jpg" alt="{{profile?.firstname}}" (click)="imageClicked = true">
         </div>
     </div>
 </div>
 
 <div #myModal class="modal" *ngIf="imageClicked" style="display: block">
     <span class="close" (click)="imageClicked = false">&times;</span>
-    <img class="modal-content" src="/assets/images/searchById-profileResponse.PNG">
-    <div class="modelCaption">{{profile?.firstname}}</div>
+    <img class="modal-content" src="/assets/images/Pawan.jpg">
+    <div class="modelCaption">Happy Birthday</div>
 </div>
 
 <div *ngIf="noDataPresent">
