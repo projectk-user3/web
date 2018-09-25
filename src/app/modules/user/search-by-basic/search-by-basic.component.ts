@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../../../services/rest.service';
+import { AppConstants } from '../../../constants/config.constants';
 
 @Component({
   selector: 'app-search-by-basic',
@@ -6,10 +8,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-by-basic.component.scss']
 })
 export class SearchByBasicComponent implements OnInit {
-
-  constructor() { }
+  gender = '';
+  ageFrom = '';
+  ageTo = '';
+  profile: any;
+  noDataPresent = false;
+  constructor(private _restService: RestService) { }
 
   ngOnInit() {
   }
-
+  search() {
+    const postData = {
+      'gender': this.gender,
+      'ageFrom': this.ageFrom,
+      'ageTo': this.ageTo
+    };
+    this._restService.httpPostCall(AppConstants.searchEndPoint,postData).subscribe((res: any) => {
+      this.profile = res;
+      console.log(res);
+    }, error => {
+      this.noDataPresent = true;
+    });
+  }
 }

@@ -8,10 +8,16 @@ export const AppConstants = {
   apiEndpoint: 'api',
   loginEndPoint: '/loginData',
   searchByIdEndPoint: '/searchById',
+  searchEndPoint: '/fetchProfiles',
   admin: 'admin',
   client: 'client',
   user: 'user',
-  useMockData: true
+  useMockData: true,
+  receivedLikeCntEndPoint:'/receivedLikeCntEndPoint',
+  sentLikeCntEndPoint:'/sentLikeCntEndPoint',
+  receivedMsgCntEndPoint:'/receivedMsgCntEndPoint',
+  sentMsgCntEndPoint:'/sentMsgCntEndPoint',
+  favCntEndPoint:'/favCntEndPoint'
 };
 
 export class ErrorConstants {

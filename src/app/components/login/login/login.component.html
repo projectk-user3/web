@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <label for="username" class="weight-normal">Username or email address</label>
                                 <a class="pull-right anchor-font-size forgot-links-top" [routerLink]="['/forgot', 'username']">Forgot?</a>
-                                <input class="form-control username" type="text" name='username' formControlName="username" appRestrictInput='username' [(ngModel)]="username" />
+                                <input class="form-control username" type="text" name='username' formControlName="username" [(ngModel)]="username" />
                                 <span *ngIf="username" (click)="username = null;" class="fa fa-times-circle form-control-feedback close-icon">
                 </span>
                             </div>

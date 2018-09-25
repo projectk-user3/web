@@ -22,17 +22,12 @@ export class RestService {
     return throwError(errorResponse);
   }
 
+  
   getHttpHeaders(serviceUrl) {
-    const httpHeaders = new HttpHeaders();
-    httpHeaders.set('Accept', 'application/json');
-    httpHeaders.set('Content-Type', 'application/json');
-    if (serviceUrl !== AppConstants.loginEndPoint) {
-      httpHeaders.set('Authorization', 'Bearer' + localStorage.getItem('loginUser'));
-    } else {
-      httpHeaders.set('loginId', localStorage.getItem('loginId'));
-      httpHeaders.set('password', localStorage.getItem('password'));
-    }
-    return httpHeaders;
+    return new HttpHeaders()
+      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .set('Authorization', 'Bearer' + localStorage.getItem('loginUser'));
   }
 
   httpGetServiceCall(serviceUrl) {
@@ -42,5 +37,16 @@ export class RestService {
     }
     return this._httpClient.get(`${this.baseJsonServerUrl + '/' + serviceUrl}`, { headers: this.getHttpHeaders(serviceUrl) })
       .pipe(map(res => res), catchError(this._handleError));
+  
   }
+  
+  httpPostCall(serviceUrl, param) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+    return this._httpClient.post(`${this.baseJsonServerUrl + serviceUrl}`, JSON.stringify(param), httpOptions)
+    .pipe(map(res => res), catchError(this._handleError));
+}
 }

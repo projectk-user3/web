@@ -1,3 +1,17 @@
-<p>
-    search-by-basic works!
-</p>
+
+    <!--Gender-->
+   
+    <div class="form-group">
+        <label for="ur-gender">Gender:</label>
+        <input class="form-control" id="ur-gender" name="ur-gender" [(ngModel)]="gender"/>
+    </div>
+    <!--Age-->
+    <div class="form-group">
+        <label for="ur-dob">Age:</label>
+        <label for="ur-dob">From:</label>
+        <input class="form-control" id="ageFrom" name="ageFrom" [(ngModel)]="ageFrom"/>
+        <label for="ur-dob">To:</label>
+        <input class="form-control" id="ageTo"  name="ageTo" [(ngModel)]="ageTo"/>
+    </div>
+    <button class="btn btn-sm btn-primary profileSearchBtn" (click)="search();">Search</button>
+    
