@@ -15,7 +15,7 @@ import { GlobalErrorHandlerService } from './services/error-handling/global-erro
 import { AuthGuardService } from './services/authguard/auth-guard.service';
 
 import { RestrictInputDirective } from './directives/validation/restrict-input.directive';
-
+import { UserService } from './services/_services/user.service';
 
 
 @NgModule({
@@ -35,6 +35,7 @@ import { RestrictInputDirective } from './directives/validation/restrict-input.d
   ],
   providers: [
     ErrorLogService,
+    UserService,
     AuthGuardService,
     {
       provide: HTTP_INTERCEPTORS,

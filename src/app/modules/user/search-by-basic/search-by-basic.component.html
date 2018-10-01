@@ -1,17 +1,93 @@
 
-    <!--Gender-->
-   
-    <div class="form-group">
-        <label for="ur-gender">Gender:</label>
-        <input class="form-control" id="ur-gender" name="ur-gender" [(ngModel)]="gender"/>
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+            <!-- general form elements -->
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Basic Search</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+
+                <div class="box-body">
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <input type="text" formControlName="gender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }" placeholder="Enter Gender M or F"
+                        />
+                        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback">
+                            <div *ngIf="f.gender.errors.required">Gender is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ageFrom">Age From:</label>
+                        <input type="text" formControlName="ageFrom" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ageFrom.errors }" placeholder="Enter Age From (cm)"
+                        />
+                        <div *ngIf="submitted && f.ageFrom.errors" class="invalid-feedback">
+                            <div *ngIf="f.ageFrom.errors.required">Age From is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ageTo">Age To:</label>
+                        <input type="text" formControlName="ageTo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ageTo.errors }" placeholder="Enter Age To (cm)"
+                        />
+                        <div *ngIf="submitted && f.ageTo.errors" class="invalid-feedback">
+                            <div *ngIf="f.ageTo.errors.required">Age To is required</div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="box-footer">
+                        <button type="reset" class="btn btn-default">Reset</button>
+                        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+                        />
+                        <button type="submit" [disabled]="loading" class="btn btn-primary pull-right" (click)="search();">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--Age-->
-    <div class="form-group">
-        <label for="ur-dob">Age:</label>
-        <label for="ur-dob">From:</label>
-        <input class="form-control" id="ageFrom" name="ageFrom" [(ngModel)]="ageFrom"/>
-        <label for="ur-dob">To:</label>
-        <input class="form-control" id="ageTo"  name="ageTo" [(ngModel)]="ageTo"/>
-    </div>
-    <button class="btn btn-sm btn-primary profileSearchBtn" (click)="search();">Search</button>
-    
+</form>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.userId}} ({{user.firstname}} {{user.lastname}})
+    </li>
+</ul>
+<div class="row" *ngFor="let user of users">
+        <!-- left column -->
+        <div class="col-12 col-md-6 col-lg-6 col-xl-4 mb-4">
+                {{user.userId}} ({{user.firstname}} {{user.lastname}})
+                <div class="card lis-brd-light wow fadeInUp text-center text-lg-left" style="visibility: visible; animation-name: fadeInUp;">
+                        <a href="#">
+                            <div class="lis-grediant grediant-tb-light2 lis-relative modImage lis-radius rounded-top"> <img src="dist/images/img5.jpg" alt="" class="img-fluid rounded-top w-100"> </div>
+                            <div class="lis-absolute lis-right-20 lis-top-20">
+                                <div class="lis-post-meta border border-white text-white rounded lis-f-14">Open</div>
+                            </div>
+                        </a>
+                        <div class="card-body pt-0">
+                            <div class="media d-block d-lg-flex lis-relative"> <img src="dist/images/card-logo5.png" alt="" class="lis-mt-minus-15 img-fluid d-lg-flex mx-auto mr-lg-3 mb-4 mb-lg-0 border lis-border-width-2 rounded-circle border-white" width="80">
+                                <div class="media-body align-self-start mt-2">
+                                    <h6 class="mb-0 lis-font-weight-600"><a href="#" class="lis-dark">{{user.firstname}} {{user.lastname}}</a></h6> </div>
+                            </div>
+                            <ul class="list-unstyled my-4 lis-line-height-2">
+                                <li><i class="fa fa-phone pr-2"></i> {{user.aboutSelf}}</li>
+                                <li><i class="fa fa-map-o pr-2"></i> {{user.address}}</li>
+                            </ul>
+                            <div class="clearfix">
+                                <div class="float-none float-lg-left mb-3 mb-lg-0 mt-1">
+                                    <a href="#" class="text-white"><i class="icofont icofont-beer px-2 lis-bg2 py-2 lis-rounded-circle-50 lis-f-14"></i></a>
+                                    <a href="#" class="text-white"><i class="icofont icofont-fast-food px-2 lis-bg4 py-2 lis-rounded-circle-50 lis-f-14"></i></a>
+                                    <a href="#" class="lis-id-info lis-light p-2 lis-rounded-circle-50 lis-f-14">1 More...</a> </div>
+                                <div class="float-none float-lg-right mt-1">
+                                    <a href="#" class="lis-light lis-f-14"><i class="fa fa-envelope-o lis-id-info  lis-rounded-circle-50 text-center"></i></a>
+                                    <a href="#" class="lis-light lis-f-14"><i class="fa fa-heart-o lis-id-info  lis-rounded-circle-50 text-center"></i></a>
+                                    <a href="#" class="lis-green-light text-white p-2 lis-rounded-circle-50 lis-f-14"><i class="fa fa-star"></i> 3.0</a> </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        
+</div>

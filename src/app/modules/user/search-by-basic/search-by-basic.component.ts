@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { RestService } from '../../../services/rest.service';
-import { AppConstants } from '../../../constants/config.constants';
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { UserService } from "../../../services/_services/user.service";
+import { first } from "rxjs/operators";
 
 @Component({
   selector: 'app-search-by-basic',
@@ -8,26 +9,45 @@ import { AppConstants } from '../../../constants/config.constants';
   styleUrls: ['./search-by-basic.component.scss']
 })
 export class SearchByBasicComponent implements OnInit {
-  gender = '';
-  ageFrom = '';
-  ageTo = '';
-  profile: any;
+  users: any;
+  searchForm: FormGroup;
+  loading = false;
+  submitted = false;
   noDataPresent = false;
-  constructor(private _restService: RestService) { }
+  constructor(private _userService: UserService,
+    private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.searchForm = this.formBuilder.group({
+      gender: ['', Validators.required],
+      ageTo: ['', Validators.required],
+      ageFrom: ['', Validators.required]
+    });
   }
-  search() {
+  get f() { return this.searchForm.controls; }
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.searchForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
     const postData = {
-      'gender': this.gender,
-      'ageFrom': this.ageFrom,
-      'ageTo': this.ageTo
+      'gender': this.f.gender.value,
+      'ageFrom': this.f.ageFrom.value,
+      'ageTo':this.f.ageTo.value
     };
-    this._restService.httpPostCall(AppConstants.searchEndPoint,postData).subscribe((res: any) => {
-      this.profile = res;
-      console.log(res);
+    this._userService.getAll(postData).pipe(first()).subscribe(users => {
+      this.users = users;
+      console.log(users);
+      this.loading = false;
     }, error => {
       this.noDataPresent = true;
+      this.loading = false;
     });
+
+
   }
 }

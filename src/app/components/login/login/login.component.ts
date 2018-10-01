@@ -41,8 +41,8 @@ export class LoginComponent implements OnInit, OnDestroy {
         'loginId': this.username,
         'password': this.password
       };
-      //this._restService.httpPostCall(AppConstants.loginEndPoint,postData).subscribe(
-      this._restService.httpGetServiceCall(AppConstants.loginEndPoint).subscribe(
+      this._restService.httpPostCall(AppConstants.loginEndPoint,postData).subscribe(
+      //this._restService.httpGetServiceCall(AppConstants.loginEndPoint).subscribe(
         (data: any) => {
           this.isServerSideError = false;
           if (data) {

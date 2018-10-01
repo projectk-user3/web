@@ -1,0 +1,89 @@
+[
+    
+    {
+        "id": 0,
+        "clientId": null,
+        "userId": "8P30",
+        "firstname": "Test First Name 10",
+        "lastname": "Test Last Name 10",
+        "email": null,
+        "dob": "1996-06-12",
+        "age": 22,
+        "height": {
+            "cms": 130,
+            "inches": 51.181,
+            "fts": "4' 3.18\""
+        },
+        "complexion": "3",
+        "education": "2",
+        "occupation": "1",
+        "maritalstatus": "2",
+        "paternalGotram": "1",
+        "maternalGotram": "1",
+        "star": "10",
+        "rasi": "10",
+        "aboutSelf": "Test10",
+        "salary": "8823241",
+        "mobileno": null,
+        "address": null,
+        "photoLink": "",
+        "videoLink": "",
+        "activeInd": null,
+        "recCrtTs": null,
+        "recLstUpdtTs": null,
+        "caste": "1",
+        "gender": "F",
+        "distance": {
+            "kms": 27.47,
+            "miles": 17.07,
+            "nauticalMiles": 14.83
+        },
+        "prefMatchMap": {
+            "caste": "1",
+            "height": "129-160",
+            "occupation": "1"
+        }
+    },
+    {
+        "id": 0,
+        "clientId": null,
+        "userId": "8P32",
+        "firstname": "Test First Name 12",
+        "lastname": "Test Last Name 12",
+        "email": null,
+        "dob": "1996-06-12",
+        "age": 22,
+        "height": {
+            "cms": 132,
+            "inches": 51.9684,
+            "fts": "4' 3.97\""
+        },
+        "complexion": "5",
+        "education": "2",
+        "occupation": "3",
+        "maritalstatus": "4",
+        "paternalGotram": "1",
+        "maternalGotram": "1",
+        "star": "12",
+        "rasi": "12",
+        "aboutSelf": "Test12",
+        "salary": "8823243",
+        "mobileno": null,
+        "address": null,
+        "photoLink": "",
+        "videoLink": "",
+        "activeInd": null,
+        "recCrtTs": null,
+        "recLstUpdtTs": null,
+        "caste": "3",
+        "gender": "F",
+        "distance": {
+            "kms": 31.95,
+            "miles": 19.86,
+            "nauticalMiles": 17.25
+        },
+        "prefMatchMap": {
+            "height": "129-160"
+        }
+    }
+]
