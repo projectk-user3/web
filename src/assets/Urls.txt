@@ -1148,3 +1148,171 @@ Response:
     "status": "SUCCESS"
 }
 
+---
+Create User -- POST
+URL: http://localhost:8080/ProjectK/rest/user/create
+Headers:
+Content-Type:application/json
+Authorization:BearereyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJUZXN0IEZpcnN0IE5hbWUgOTciLCJsYXN0TmFtZSI6IlRlc3QgTGFzdCBOYW1lIDk3IiwiY2xpZW50SWQiOiI4UDIiLCJwaG90b1BhdGgiOm51bGwsInBlcm1pc3Npb25zIjpbIk1ZUFJPRklMRSIsIkRBU0hCT0FSRCIsIlNFQVJDSCJdLCJ1c2VyUm9sZSI6IlVTRVIiLCJleHAiOjE1MzkwNzAyOTIsInVzZXJJZCI6Im1haGVzaEA4UDIiLCJ1c2VyS2V5IjpudWxsfQ.kXT0x1aHtz-EwX_6qZr9T4pwWXmF1MYKFN80ACLFa5E
+
+Body:
+{"firstname":"Mahesh",
+	 "lastname":"Bonagiri",
+	 "email":"bmahesh.nitd@gmail.com",
+	 "dob":"18-02-1990",
+	 "height":"160",
+	 "complexion":"1",
+	 "education":"2",
+	 "occupation":"3",
+	 "maritalstatus":"1",
+	 "paternalGotram":"1",
+	 "maternalGotram":"2",
+	 "star":"4",
+	 "rasi":"5",
+	 "aboutSelf":"Hi i am",
+	 "salary":"1000000",
+	 "mobileno":"9966121234",
+	 "address":"Flat no 2011 A bbb Hyderabad",
+	 "photoLink":"8P21.jpg",
+	 "videoLink":"Test",
+	 "activeInd":"Y",
+	 "gender":"M",
+	 "caste":"4",
+	 "latitude":19.31222,
+	 "longitude":78.301234
+	
+}
+Response:
+{
+    "payload": "8P298",
+    "status": "SUCCESS"
+}
+
+Fetch User: GET 
+Url:http://localhost:8080/ProjectK/rest/user/id/{UserId}
+Headers:
+Content-Type:application/json
+Authorization:BearereyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJUZXN0IEZpcnN0IE5hbWUgOTciLCJsYXN0TmFtZSI6IlRlc3QgTGFzdCBOYW1lIDk3IiwiY2xpZW50SWQiOiI4UDIiLCJwaG90b1BhdGgiOm51bGwsInBlcm1pc3Npb25zIjpbIk1ZUFJPRklMRSIsIkRBU0hCT0FSRCIsIlNFQVJDSCJdLCJ1c2VyUm9sZSI6IlVTRVIiLCJleHAiOjE1MzkwNzAyOTIsInVzZXJJZCI6Im1haGVzaEA4UDIiLCJ1c2VyS2V5IjpudWxsfQ.kXT0x1aHtz-EwX_6qZr9T4pwWXmF1MYKFN80ACLFa5E
+
+Response:
+{
+    "id": 0,
+    "clientId": null,
+    "userId": "8P298",
+    "firstname": "Mahesh",
+    "lastname": "Bonagiri",
+    "email": null,
+    "dob": "1990-02-18",
+    "age": 28,
+    "height": {
+        "cms": 160,
+        "inches": 62.992,
+        "fts": "5' 2.99\""
+    },
+    "complexion": "1",
+    "education": "2",
+    "occupation": "3",
+    "maritalstatus": "1",
+    "paternalGotram": "1",
+    "maternalGotram": "2",
+    "star": "4",
+    "rasi": "5",
+    "aboutSelf": "Hi i am",
+    "salary": "1000000",
+    "mobileno": null,
+    "address": null,
+    "photoLink": "8P21.jpg",
+    "videoLink": "Test",
+    "activeInd": null,
+    "recCrtTs": null,
+    "recLstUpdtTs": null,
+    "caste": "4",
+    "gender": "M",
+    "distance": {
+        "kms": 218.69,
+        "miles": 135.89,
+        "nauticalMiles": 118.08
+    },
+    "prefMatchMap": null
+}
+
+Update:
+URL:http://localhost:8080/ProjectK/rest/user/update
+Headers:
+Content-Type:application/json
+Authorization:BearereyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJNYWhlc2giLCJsYXN0TmFtZSI6IkJvbmFnaXJpIiwiY2xpZW50SWQiOiI4UDIiLCJwaG90b1BhdGgiOm51bGwsInBlcm1pc3Npb25zIjpbIk1ZUFJPRklMRSIsIkRBU0hCT0FSRCIsIlNFQVJDSCJdLCJ1c2VyUm9sZSI6IlVTRVIiLCJleHAiOjE1MzkwNzI4ODYsInVzZXJJZCI6IjhQMjk4IiwidXNlcktleSI6bnVsbH0.w5cLFwGIdceO_ToBPznxxalqqXI-vhI6zfTK7JcCFps
+Body:
+{
+    "id": 0,
+    "clientId": null,
+    "userId": "8P298",
+    "firstname": "Mahesh 1234",
+    "lastname": "Bonagiri",
+    "email": "bmahesh.nitd@gmail.com",
+    
+    "age": 28,
+    "height": {
+        "cms": 160,
+        "inches": 62.992,
+        "fts": "5' 2.99\""
+    },
+    "complexion": "1",
+    "education": "2",
+    "occupation": "3",
+    "maritalstatus": "1",
+    "paternalGotram": "1",
+    "maternalGotram": "2",
+    "star": "4",
+    "rasi": "5",
+    "aboutSelf": "Hi i am Mahesh",
+    "salary": "1000000",
+    "mobileno": "9966121234",
+    "address": "Flat no 2011 A bbb Hyderabad",
+    "photoLink": "8P21.jpg",
+    "videoLink": "Test",
+    "activeInd": null,
+    "recCrtTs": null,
+    "recLstUpdtTs": null,
+    "caste": "4",
+    "gender": "M",
+    "distance": null,
+    "prefMatchMap": null,
+    "latitude": 19.31222,
+    "longitude": 78.301234
+}
+Response:
+{
+    "payload": "com.projectk.model.entity.User@3a0ede99",
+    "status": "SUCCESS"
+}
+
+
+-- Client Dashboard
+Get all User updates
+URL: http://localhost:8080/ProjectK/rest/clientDashboard/getAllUsrUpdates/0/2
+Response:
+[
+    {
+        "id": 4,
+        "userId": "8P298",
+        "update": "Hi i am Mahesh",
+        "updatedDate": "2018-10-09",
+        "acceptFlag": false
+    }
+]
+Accept/Decline user update
+URL:
+http://localhost:8080/ProjectK/rest/clientDashboard/acceptUsrUpdate
+Body:
+{
+        "id": 4,
+        "userId": "8P298",
+        "update": "Hi i am Mahesh",
+        "updatedDate": "2018-10-09",
+        "acceptFlag": false
+    }
+Response:
+{
+    "status": "SUCCESS"
+}
+	
