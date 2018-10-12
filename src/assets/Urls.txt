@@ -1158,7 +1158,7 @@ Authorization:BearereyJhbGciOiJIUzI1NiJ9.eyJmaXJzdE5hbWUiOiJUZXN0IEZpcnN0IE5hbWU
 Body:
 {"firstname":"Mahesh",
 	 "lastname":"Bonagiri",
-	 "email":"bmahesh.nitd@gmail.com",
+	 "email":"email",
 	 "dob":"18-02-1990",
 	 "height":"160",
 	 "complexion":"1",
@@ -1248,7 +1248,7 @@ Body:
     "userId": "8P298",
     "firstname": "Mahesh 1234",
     "lastname": "Bonagiri",
-    "email": "bmahesh.nitd@gmail.com",
+    "email": "email.com",
     
     "age": 28,
     "height": {
